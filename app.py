@@ -188,6 +188,16 @@ st.markdown("""
 # Load metrics
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 runs_dir = os.path.join(BASE_DIR, 'runs')
+
+
+@st.cache_resource(show_spinner="Loading YOLO model…")
+def load_model(model_path):
+    """Load each checkpoint once per Streamlit server process."""
+    if not os.path.isfile(model_path):
+        return None
+    return YOLO(model_path)
+
+
 v1_m = {"precision": 0.9166, "recall": 0.8026, "map50": 0.8865, "map50_95": 0.6149}
 v2_m = {"precision": 0.8981, "recall": 0.8308, "map50": 0.9010, "map50_95": 0.6165}
 
@@ -505,8 +515,8 @@ with tab4:
         st.image(cv2.cvtColor(input_bgr, cv2.COLOR_BGR2RGB), caption="Input Image", width=500)
         
         if st.button("🚀 Run Detection", type="primary"):
-            m1 = YOLO(w_v1) if os.path.exists(w_v1) else None
-            m2 = YOLO(w_v2) if os.path.exists(w_v2) else None
+            m1 = load_model(w_v1) if os.path.exists(w_v1) else None
+            m2 = load_model(w_v2) if os.path.exists(w_v2) else None
             
             if model_opt == "Model V2 (Augmented)":
                 if m2:

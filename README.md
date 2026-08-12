@@ -63,8 +63,18 @@ v1 vs v2 Comparison
 
 Sources: [runs/v1_metrics.json](runs/v1_metrics.json#L1) (validation) and [runs/v2_metrics.json](runs/v2_metrics.json#L1) (test). Metrics are shown to three-five decimal places as reported.
 
-Streamlit Deployment
-- Install dependencies and run the demo/inference app with Streamlit.
+Streamlit Community Cloud deployment
+
+The deployment entry point is `app.py`. Model checkpoints and sample assets are stored with Git LFS, so push all LFS objects before deploying.
+
+```bash
+git lfs install
+git lfs push --all origin main
+```
+
+In Streamlit Community Cloud, create an app from the repository, select the `main` branch, set the main file to `app.py`, then deploy. Cloud automatically uses `requirements.txt`, `packages.txt`, and `runtime.txt`.
+
+For local development:
 
 ```bash
 python -m venv .venv
