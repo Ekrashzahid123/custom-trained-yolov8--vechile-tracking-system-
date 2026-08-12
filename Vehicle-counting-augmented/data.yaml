@@ -1,0 +1,6 @@
+train: d:/Model Imrovement/Vehicle-counting-augmented/train/images
+val: d:/Model Imrovement/Vehicle-counting-augmented/valid/images
+test: d:/Model Imrovement/Vehicle-counting-augmented/test/images
+
+nc: 5
+names: ['bicycle', 'bus', 'car', 'motorcycle', 'truck']

@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['bicycle', 'bus', 'car', 'motorcycle', 'truck']
+
+roboflow:
+  workspace: vehiclecounting-id5od
+  project: vehicle-counting-t2uij
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/vehiclecounting-id5od/vehicle-counting-t2uij/dataset/1
