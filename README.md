@@ -1,3 +1,14 @@
+---
+title: YOLOv8 Vehicle Tracking & Counting System
+emoji: 🚗
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: "1.35.0"
+app_file: app.py
+pinned: false
+---
+
 # Vehicle Counting — YOLOv8 Custom Training
 
 This repository contains code and experiments for training a custom YOLOv8 model for vehicle counting and tracking.
