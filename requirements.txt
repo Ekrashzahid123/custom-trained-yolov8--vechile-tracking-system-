@@ -1,0 +1,13 @@
+ultralytics
+torch>=2.0.0
+torchvision
+opencv-python
+streamlit
+pandas
+numpy
+Pillow
+pyyaml
+matplotlib
+seaborn
+scikit-learn
+tqdm

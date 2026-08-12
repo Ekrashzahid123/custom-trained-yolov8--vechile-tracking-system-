@@ -50,3 +50,16 @@ v1 vs v2 Comparison
 | mAP50-95 | 0.71011 | 0.61648 |
 
 Sources: [runs/v1_metrics.json](runs/v1_metrics.json#L1) (validation) and [runs/v2_metrics.json](runs/v2_metrics.json#L1) (test). Metrics are shown to three-five decimal places as reported.
+
+Streamlit Deployment
+- Install dependencies and run the demo/inference app with Streamlit.
+
+```bash
+python -m venv .venv
+# Windows activate: .venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+- If you need GPU-aware PyTorch, install `torch` using the instructions at https://pytorch.org/ for the appropriate CUDA/toolkit version before `pip install -r requirements.txt`.
+- If `app.py` is not a Streamlit app, replace `app.py` with your Streamlit entrypoint (for example `streamlit_app.py`).
