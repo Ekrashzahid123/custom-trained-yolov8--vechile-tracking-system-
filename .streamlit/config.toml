@@ -1,0 +1,13 @@
+[server]
+# Allows practical short video uploads while keeping Cloud memory use bounded.
+maxUploadSize = 200
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#F8FAFC"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#0F172A"
