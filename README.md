@@ -74,3 +74,6 @@ streamlit run app.py
 
 - If you need GPU-aware PyTorch, install `torch` using the instructions at https://pytorch.org/ for the appropriate CUDA/toolkit version before `pip install -r requirements.txt`.
 - If `app.py` is not a Streamlit app, replace `app.py` with your Streamlit entrypoint (for example `streamlit_app.py`).
+
+Streamlit Cloud runtime note
+- Streamlit Cloud uses the Python runtime declared in `runtime.txt` (if present). Some binary packages such as OpenCV may not have prebuilt wheels for the newest Python versions. If you see `ModuleNotFoundError: No module named 'cv2'` on deploy, ensure the repo contains `runtime.txt` with a compatible version (example included: `python-3.10.12`).
