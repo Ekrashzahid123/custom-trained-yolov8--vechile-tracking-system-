@@ -44,8 +44,9 @@ def flip_yolo_boxes(boxes):
     return flipped_boxes
 
 def generate_augmented_dataset():
-    src_dataset = r'd:\Model Imrovement\Vehicle-counting.v1i.yolov8'
-    dst_dataset = r'd:\Model Imrovement\Vehicle-counting-augmented'
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    src_dataset = os.path.join(base_dir, 'Vehicle-counting.v1i.yolov8')
+    dst_dataset = os.path.join(base_dir, 'Vehicle-counting-augmented')
     
     print(f"Creating augmented dataset at {dst_dataset}...")
     

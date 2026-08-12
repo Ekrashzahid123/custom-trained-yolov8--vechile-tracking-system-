@@ -186,7 +186,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load metrics
-runs_dir = r'd:\Model Imrovement\runs'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+runs_dir = os.path.join(BASE_DIR, 'runs')
 v1_m = {"precision": 0.9166, "recall": 0.8026, "map50": 0.8865, "map50_95": 0.6149}
 v2_m = {"precision": 0.8981, "recall": 0.8308, "map50": 0.9010, "map50_95": 0.6165}
 
@@ -486,7 +487,7 @@ with tab4:
     with col_c2:
         model_opt = st.radio("Model Selection", ["Model V2 (Augmented)", "Model V1 (Baseline)", "Side-by-Side Comparison"], horizontal=True)
 
-    test_imgs = sorted(glob.glob(r'd:\Model Imrovement\Vehicle-counting.v1i.yolov8\test\images\*.*'))
+    test_imgs = sorted(glob.glob(os.path.join(BASE_DIR, 'Vehicle-counting.v1i.yolov8', 'test', 'images', '*.*')))
     
     img_source = st.radio("Select Image Source", ["Sample Test Dataset Image", "Upload Custom Image"], horizontal=True)
     

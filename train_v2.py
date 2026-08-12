@@ -3,8 +3,9 @@ import json
 from ultralytics import YOLO
 
 def train_and_eval_v2():
-    dataset_yaml = r'd:\Model Imrovement\Vehicle-counting-augmented\data.yaml'
-    project_dir = r'd:\Model Imrovement\runs'
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    dataset_yaml = os.path.join(base_dir, 'Vehicle-counting-augmented', 'data.yaml')
+    project_dir = os.path.join(base_dir, 'runs')
     name_v2 = 'v2_augmented'
     
     print("=== Training Model V2 (Augmented & Improved) ===")

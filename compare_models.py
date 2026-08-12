@@ -36,7 +36,8 @@ def create_side_by_side_comparison(img_path, res_v1, res_v2, title_text, output_
     cv2.imwrite(output_path, canvas)
 
 def compare_models():
-    project_dir = r'd:\Model Imrovement\runs'
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    project_dir = os.path.join(base_dir, 'runs')
     w_v1 = os.path.join(project_dir, 'v1_baseline', 'weights', 'best.pt')
     w_v2 = os.path.join(project_dir, 'v2_augmented', 'weights', 'best.pt')
     
@@ -45,7 +46,7 @@ def compare_models():
     print(f"Loading V2 model from: {w_v2}")
     model_v2 = YOLO(w_v2)
     
-    dataset_yaml = r'd:\Model Imrovement\Vehicle-counting.v1i.yolov8\data.yaml'
+    dataset_yaml = os.path.join(base_dir, 'Vehicle-counting.v1i.yolov8', 'data.yaml')
     
     # Run test set evaluation for V1
     print("Evaluating Model V1 on Test Set...")
@@ -80,7 +81,7 @@ def compare_models():
     print("=" * 65)
     
     # Compare predictions image by image to identify 5 improvement examples
-    test_imgs = glob.glob(r'd:\Model Imrovement\Vehicle-counting.v1i.yolov8\test\images\*.*')
+    test_imgs = glob.glob(os.path.join(base_dir, 'Vehicle-counting.v1i.yolov8', 'test', 'images', '*.*'))
     
     candidate_examples = []
     
