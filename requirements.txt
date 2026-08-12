@@ -1,7 +1,7 @@
 ultralytics
 torch>=2.0.0
 torchvision
-opencv-python
+opencv-python-headless
 streamlit
 pandas
 numpy
